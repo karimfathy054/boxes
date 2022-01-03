@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <stdio.h>
 #include <conio.h>
+#include <ctype.h>
 #include "menu.h"
 #include "structures.h"
 
@@ -118,7 +119,7 @@ int checkBoxes(int gridDim, char gameArray[][gridDim*2-1], player *currentPlayer
 void printGridWithCursor(int n, char gameArray[n][n], tuple index_highlighted, HANDLE hconsole, WORD savedAttributes){
     //n --> actual size not gridDim
     int isColored = 0;
-    
+
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
             if(i == index_highlighted.x && j == index_highlighted.y){
@@ -260,6 +261,28 @@ int winner(int score1,int score2){
         return 0;
     }
 
+}
+int winnerVScom(int score1,int scoreCOM){
+    if(score1>scoreCOM){
+        printf("YOU WON!\n");
+        return score1;
+    }
+    else if(score1<scoreCOM){
+        printf("GAME OVER!\n");
+        return 0;
+    }
+    else{
+        printf("IT'S A TIE\n");
+        return 0;
+    }
+
+}
+
+
+void allsmall(char arr[]){
+    for(int i=0;arr[i]!='\0';i++){
+        arr[i]= tolower(arr[i]);
+    }
 }
 // void logo(){
 //     printf("                  _,.---._      ,--.--------.     ,-,--.                  ,---.--.                                   _,.---._              ,-.--,       ,----.     ,-,--.  \n");

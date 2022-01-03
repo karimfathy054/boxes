@@ -4,8 +4,11 @@
 #include "structures.h"
 #include "userInput.h"
 
-void save (int gridDim,char gameArray[][gridDim*2-1],int movesArray[][3]){
+void save (int gridDim,char gameArray[][gridDim*2-1],int movesArray[][3],int scoreP1, int scoreP2){
+
     savedgame.Dimensions=gridDim;
+    savedgame.score1=scoreP1;
+    savedgame.score2=scoreP2;
     for(int i=0;i<(gridDim*2-1);i++){
         for(int j=0;j<(gridDim*2-1);j++){
             savedgame.Grid[i][j]=gameArray[i][j];

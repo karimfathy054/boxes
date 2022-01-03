@@ -57,7 +57,7 @@ void humanTurn(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVE
     printf("want to save?(y/n)");
     char result = readChar();
     if(result=='y' || result=='Y'){
-        save(gridDim,gameArray,movesArray);
+        save(gridDim,gameArray,movesArray,playerPointers[0]->score,playerPointers[1]->score);
     }
 
     //***undo loop***
@@ -132,7 +132,7 @@ void gameLoopVScom(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][
         //time
         printTime(start);
         if(boxCount == (gridDim-1)*(gridDim-1)){
-            int score =winner(player1.score,com.score);
+            int score = winnerVScom(player1.score,com.score);
             add_to_leaderboard(score);
             //clearBuffer();
             break;

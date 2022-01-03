@@ -37,21 +37,23 @@ void displayMenu(HANDLE hconsole, WORD savedAttributes,int index_highlighted, in
 
 int menu(HANDLE hconsole, WORD savedAttributes, int length, char items [][MAXLENGTH], char *title){
     displayMenu(hconsole, savedAttributes, 0, length, items);
+    short esc = 0;
     int index = 0;
     while(1){
         printf(title);
         printf("\n");
         char c = getch();
-        if(c == 'w'){
+        esc = GetAsyncKeyState ( VK_ESCAPE );
+        if(c == 'w'||c=='W'||GetAsyncKeyState ( VK_UP ) & SHRT_MAX){
             if(index == 0){
                 index = length - 1;
             }else{
                 index = (index-1)%length;
-            }   
+            }
             //fflush(stdin);
             system("CLS");
             displayMenu(hconsole, savedAttributes, index, length, items);
-        }else if(c == 's'){
+        }else if(c == 's'||c =='S'||GetAsyncKeyState ( VK_DOWN ) & SHRT_MAX){
             index = (index + 1) % length;
             //fflush(stdin);
             system("CLS");
@@ -81,7 +83,7 @@ int menu(HANDLE hconsole, WORD savedAttributes, int length, char items [][MAXLEN
 //                 index = 2;
 //             }else{
 //                 index = (index-1)%3;
-//             }   
+//             }
 //             //fflush(stdin);
 //             system("CLS");
 //             displayMenu(hconsole, savedAttributes, index, START_MENU_LENGTH, items);
@@ -99,10 +101,10 @@ int menu(HANDLE hconsole, WORD savedAttributes, int length, char items [][MAXLEN
 
 //     fflush(stdin);
 //     system("CLS");
-    
+
 //     switch (index){
 //     case 0: //single player
-        
+
 //         break;
 
 //     case 1: //two player
