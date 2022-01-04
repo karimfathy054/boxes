@@ -100,7 +100,10 @@ void gameLoopVScom(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][
     resetMovesArray(gridDim, movesArray);
     //players
     player player1 = {1, 'A', 3, 0};
+    int playermoves=0;
     player com = {2, 'C', 4, 0};
+    int computermoves=0;
+    int remaininglines=(gridDim-1)*gridDim*2;
     player players[] = {player1, com};
     player *playerPointers[] = {&player1, &com};
     //recording start time
@@ -112,9 +115,13 @@ void gameLoopVScom(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][
 
         if(players[0].num==1){
             humanTurn(gridDim, gameArray, movesArray, playerPointers, players, &boxCount, hconsole, savedAttributes);
+            playermoves++;
+            remaininglines--;
         }else{
             printf("computer turn\n");
             randomline(gridDim , gameArray);
+            computermoves++;
+            remaininglines--;
             int newCount = checkBoxes(gridDim, gameArray, &com);
             if(newCount > boxCount){
                 boxCount = newCount;
@@ -129,6 +136,8 @@ void gameLoopVScom(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][
         }
         //score
         printf("P1 %d - %d COM\n", player1.score, com.score);
+        printf("player moves:%d\tcomputer moves:%d\n",playermoves,computermoves);
+        printf("remaining lines:%d\n",remaininglines);
         //time
         printTime(start);
         if(boxCount == (gridDim-1)*(gridDim-1)){
@@ -143,11 +152,14 @@ void gameLoopVScom(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][
 //game loop for 2 players mode
 void gameLoop(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVES_ARRAY_WIDTH], HANDLE hconsole, WORD savedAttributes){
     int boxCount = 0;
+    int remaininglines=(gridDim-1)*gridDim*2;
     //resetting movesArray
     resetMovesArray(gridDim, movesArray);
     //players
     player player1 = {1, 'A', 3};
+    int player1moves=0;
     player player2 = {2, 'B', 4};
+    int player2moves =0;
     player players[] = {player1, player2};
     player *playerPointers[] = {&player1, &player2};
     //start time
@@ -155,10 +167,20 @@ void gameLoop(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVES
     while(1){
 
         humanTurn(gridDim, gameArray, movesArray, playerPointers, players, &boxCount, hconsole, savedAttributes);
+        if(players[0].num==1){
+            player1moves++;
+            remaininglines--;
+        }
+        else{
+            player2moves++;
+            remaininglines--;
+        }
         //clearing buffer
         //clearBuffer();
         //score
         printf("P1 %d - %d P2\n", player1.score, player2.score);
+        printf("player1 moves:%d\player2 moves:%d\n",player1moves,player2moves);
+        printf("remaining lines:%d\n",remaininglines);
         //time
         printTime(start);
         if(boxCount == (gridDim-1)*(gridDim-1)){
