@@ -166,8 +166,10 @@ tuple humanPlay(int n, char gameArray[n][n], HANDLE hconsole, WORD savedAttribut
     printGridWithCursor(n, gameArray, th, hconsole, savedAttributes);
     while(cont){
         char c = getch();
-        switch(c){
-        case 's': //down
+        short esc = 0;
+        esc = GetAsyncKeyState ( VK_ESCAPE );
+        //switch(c){
+        if(c == 's'||c =='S'||GetAsyncKeyState ( VK_DOWN ) & SHRT_MAX){
             if(i+1 != n){
                 if(j-1 < 0){
                     j++;
@@ -178,8 +180,10 @@ tuple humanPlay(int n, char gameArray[n][n], HANDLE hconsole, WORD savedAttribut
             i = (i+1) % n;
             th.x = i;
             th.y = j;
-            break;
-        case 'w': //up
+        } //down
+
+            //break;
+        else if(c == 'w'||c=='W'||GetAsyncKeyState ( VK_UP ) & SHRT_MAX){
             if(i == 0){
                 i = n-1;
             }else{
@@ -192,8 +196,10 @@ tuple humanPlay(int n, char gameArray[n][n], HANDLE hconsole, WORD savedAttribut
             }
             th.x = i;
             th.y = j;
-            break;
-        case 'd': //right
+        } //up
+
+            //break;
+        else if(c == 'd'||c=='D'||GetAsyncKeyState ( VK_RIGHT ) & SHRT_MAX){
             if(j == n-2 || j == n-1){
                 j = !(i%2);
                 //alternative for:
@@ -207,8 +213,10 @@ tuple humanPlay(int n, char gameArray[n][n], HANDLE hconsole, WORD savedAttribut
             }
             th.x = i;
             th.y = j;
-            break;
-        case 'a': //left
+        } //right
+
+           // break;
+        else if(c == 'a'||c=='A'||GetAsyncKeyState ( VK_LEFT ) & SHRT_MAX){
             if(j == 0 ||j == 1){
                 j = (i%2) + n - 2;
             }else{
@@ -216,17 +224,17 @@ tuple humanPlay(int n, char gameArray[n][n], HANDLE hconsole, WORD savedAttribut
             }
             th.x = i;
             th.y = j;
-            break;
-        case '\r': //enter
+        } //left
+
+            //break;
+        else if(c=='\r'){
             th.x = i;
             th.y = j;
             if(drawLine(th, (n+1)/2, gameArray)){
                 cont = 0;
             }
-            break;
-        default:
-            break;
-        }
+        } //enter
+            //break;
         system("CLS");
         printGridWithCursor(n, gameArray, th, hconsole, savedAttributes);
         //printf("%d %d\n", th.x, th.y);
