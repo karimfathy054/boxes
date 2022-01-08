@@ -37,7 +37,7 @@ void humanTurn(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVE
     fflush(stdin);
 
     int redoArray[2*gridDim*(gridDim-1)][MOVES_ARRAY_WIDTH];
-    resetMovesArray(gridDim, redoArray);
+    //resetMovesArray(gridDim, redoArray);
     while(1){
         int selection = optionsMenu(hconsole, savedAttributes, gridDim, gameArray, movesArray, players);
         if(!selection){
@@ -46,7 +46,7 @@ void humanTurn(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVE
             break;
         }else if(selection == 1){
             //save
-            if (players[1].letter =='C'){
+            if (players[0].letter =='C'){
                 save(gridDim, gameArray, movesArray, playerPointers[0]->score, playerPointers[1]->score,0,currentNum);
             }
             else{
