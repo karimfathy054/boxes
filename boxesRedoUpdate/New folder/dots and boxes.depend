@@ -1,0 +1,61 @@
+# depslib dependency file v1.0
+1640632456 source:e:\project\dots and boxes\structures.c
+
+1640793335 source:e:\project\dots and boxes\main.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"movesManager.h"
+	"RandomLineGen.h"
+	"SAVEGAME.h"
+	"GameCore.h"
+	"gameloop.h"
+
+1640633454 e:\project\dots and boxes\movesmanager.h
+	"structures.h"
+
+1640632456 e:\project\dots and boxes\structures.c
+
+1640358864 e:\project\dots and boxes\randomlinegen.h
+
+1640788560 e:\project\dots and boxes\savegame.h
+	"structures.h"
+
+1640791663 e:\project\dots and boxes\structures.h
+
+1640633449 e:\project\dots and boxes\gamecore.h
+	"structures.h"
+
+1640791190 e:\project\dots and boxes\gameloop.h
+	"structures.h"
+
+1640882306 source:e:\project\dots and boxes v2.1+save file\main.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"movesManager.h"
+	"RandomLineGen.h"
+	"SAVEGAME.h"
+	"GameCore.h"
+	"gameloop.h"
+
+1640633454 e:\project\dots and boxes v2.1+save file\movesmanager.h
+	"structures.h"
+
+1640893558 e:\project\dots and boxes v2.1+save file\structures.h
+
+1640894257 e:\project\dots and boxes v2.1+save file\randomlinegen.h
+
+1640882271 e:\project\dots and boxes v2.1+save file\savegame.h
+	"structures.h"
+
+1640633449 e:\project\dots and boxes v2.1+save file\gamecore.h
+	"structures.h"
+
+1640882273 e:\project\dots and boxes v2.1+save file\gameloop.h
+	"structures.h"
+

@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1641649862 source:e:\project\dots and boxes finalize\main.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"movesManager.h"
+	"RandomLineGen.h"
+	"SAVEGAME.h"
+	"GameCore.h"
+	"gameloop.h"
+	"userInput.h"
+	"leaderboard.h"
+	"menu.h"
+
+1641513032 e:\project\dots and boxes finalize\movesmanager.h
+	"structures.h"
+
+1641645441 e:\project\dots and boxes finalize\structures.h
+
+1641513032 e:\project\dots and boxes finalize\randomlinegen.h
+	<stdlib.h>
+
+1641649522 e:\project\dots and boxes finalize\savegame.h
+	"structures.h"
+	"userInput.h"
+
+1641513032 e:\project\dots and boxes finalize\gamecore.h
+	<windows.h>
+	<stdio.h>
+	<conio.h>
+	<ctype.h>
+	"menu.h"
+	"structures.h"
+	"movesManager.h"
+
+1641649894 e:\project\dots and boxes finalize\gameloop.h
+	"structures.h"
+	"userInput.h"
+	"timer.h"
+	"leaderboard.h"
+
+1641513032 e:\project\dots and boxes finalize\userinput.h
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+
+1641513032 e:\project\dots and boxes finalize\timer.h
+	<time.h>
+	<stdio.h>
+
+1641513032 e:\project\dots and boxes finalize\leaderboard.h
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"structures.h"
+
+1641643084 e:\project\dots and boxes finalize\menu.h
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	<limits.h>
+
