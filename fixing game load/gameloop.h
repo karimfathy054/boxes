@@ -187,14 +187,17 @@ void gameLoop(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVES
     while(1){
 
         humanTurn(gridDim, gameArray, movesArray, playerPointers, players, &boxCount, hconsole, savedAttributes);
-        if(players[0].num==1){
+        /*if(players[0].num==1){
             player1moves = getPlayerMoves(1, gridDim, movesArray);
             remaininglines = getRemainingLines(gridDim, movesArray);
         }
         else{
             player2moves = getPlayerMoves(2, gridDim, movesArray);
             remaininglines = getRemainingLines(gridDim, movesArray);
-        }
+        }*/
+        player1moves = getPlayerMoves(1, gridDim, movesArray);
+        player2moves = getPlayerMoves(2, gridDim, movesArray);
+        remaininglines = getRemainingLines(gridDim, movesArray);
         //clearing buffer
         //clearBuffer();
         //score
