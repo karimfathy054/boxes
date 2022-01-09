@@ -71,16 +71,11 @@ int main(){
 
         //new game
         //gridDim = getIntegerUserInput("Enter dimension(nxn): ");
-        char diff[][MAXLENGTH] = {"[1]Easy", "[2]Hard"};
+        char diff[][MAXLENGTH] = {"Easy", "Hard"};
         if(menu(hconsole, saved_attributes, 2, diff, "Choose Difficulty") == 1){
             //2x2 (3x3 dots)
             gridDim = 3;
-        }
-        /*else if(menu(hconsole, saved_attributes, 3, diff, "Choose Difficulty") == 3){
-            printf("Number of dows in the Row?\n");
-            scanf("%d",&gridDim);
-        }*/
-        else{
+        }else{
             //5x5 (6x6 dots)
             gridDim = 6;
         }
@@ -106,7 +101,7 @@ int main(){
 
         if(modeNum == 1){
             int isloaded =0;
-            gameLoopVScom(gridDim, gameArray, movesArray, hconsole, saved_attributes);
+            gameLoopVScom(gridDim, gameArray, movesArray, hconsole, saved_attributes, isloaded);
             int possibleVal1[] = {1,2};
             int choice = getIntChoise("[1]back\n[2]exit\n",possibleVal1,2);
             switch(choice)
@@ -180,7 +175,6 @@ int main(){
         for(int i=0;i<(2*gridDim*(gridDim-1));i++){
             printf("%d %d %d\n",movesArray[i][0],movesArray[i][1],movesArray[i][2]);
         }
-        printf("player turn:%d\n",savedgame.turn);
 
         //loading gameArray
         for(int i=0;i<arrayDim;i++){
@@ -191,7 +185,7 @@ int main(){
         printGrid(arrayDim, gameArray);
         int isloaded = 1;
         if(savedgame.gamemode==0){
-            gameLoopVScom(gridDim, gameArray, movesArray, hconsole, saved_attributes);
+            gameLoopVScom(gridDim, gameArray, movesArray, hconsole, saved_attributes, isloaded);
         }
         else if (savedgame.gamemode==1){
             gameLoop(gridDim, gameArray, movesArray, hconsole, saved_attributes,isloaded);
