@@ -37,7 +37,7 @@ void humanTurn(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVE
     fflush(stdin);
 
     int redoArray[2*gridDim*(gridDim-1)][MOVES_ARRAY_WIDTH];
-    //resetMovesArray(gridDim, redoArray);
+    resetMovesArray(gridDim, redoArray);
     while(1){
         int selection = optionsMenu(hconsole, savedAttributes, gridDim, gameArray, movesArray, players);
         if(!selection){
@@ -47,10 +47,10 @@ void humanTurn(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVE
         }else if(selection == 1){
             //save
             if (players[0].letter =='C'){
-                save(gridDim, gameArray, movesArray, playerPointers[0]->score, playerPointers[1]->score,0,currentNum);
+                save(gridDim, gameArray, movesArray, playerPointers[0]->score, playerPointers[1]->score,0,players[0].num);
             }
             else{
-                save(gridDim, gameArray, movesArray, playerPointers[0]->score, playerPointers[1]->score,1,currentNum);
+                save(gridDim, gameArray, movesArray, playerPointers[0]->score, playerPointers[1]->score,1,players[0].num);
             }
 
         }else if(selection == 2){
@@ -62,6 +62,7 @@ void humanTurn(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVE
                 appendMove(ulcoor, lastPlayer, gridDim, redoArray);
                 undo(gridDim, movesArray, gameArray);
                 forceTurn(players, lastPlayer.num);
+                printf("forced player %d turn.\n", players[0].num);
                 *boxCount = checkBoxes(gridDim, gameArray, playerPointers[lastPlayer.num - 1]);
             }else{
                 printf("Nothing left to undo!\n");
@@ -95,7 +96,7 @@ void humanTurn(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVE
 
 }
 
-void gameLoopVScom(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVES_ARRAY_WIDTH], HANDLE hconsole, WORD savedAttributes ){
+void gameLoopVScom(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVES_ARRAY_WIDTH], HANDLE hconsole, WORD savedAttributes, int isloaded){
     int boxCount = 0;
     struct gamedata savedgame;
     //resetting movesArray
@@ -110,9 +111,10 @@ void gameLoopVScom(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][
     player *playerPointers[] = {&player1, &com};
     //recording start time
     start = getTime();
-    /*if (isloaded==1){
-        players[0].num=savedgame.turn;
-    }*/
+    if (isloaded){
+        forceTurn(players, savedgame.turn);
+        printf("is loaded");
+    }
     while(1){
         //points' coordinates
         //int x1, x2, y1, y2;
@@ -172,9 +174,13 @@ void gameLoop(int gridDim, char gameArray[][gridDim*2-1], int movesArray[][MOVES
     //start time
     start = getTime();
     // if the game is loaded check the player previous turn and switch for it
-    if((isloaded==1)&&(players[1].num!=savedgame.turn)){
-            switchTurns(players);
-            printf("is loaded\n");
+    // if((isloaded==1)&&(players[1].num!=savedgame.turn)){
+    //         switchTurns(players);
+    //         printf("is loaded\n");
+    // }
+    if(isloaded){
+        forceTurn(players, savedgame.turn);
+        printf("is loaded\n");
     }
 
 
