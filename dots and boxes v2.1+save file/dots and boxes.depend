@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1640632456 source:e:\project\dots and boxes\structures.c
+
+1640793335 source:e:\project\dots and boxes\main.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"movesManager.h"
+	"RandomLineGen.h"
+	"SAVEGAME.h"
+	"GameCore.h"
+	"gameloop.h"
+
+1640633454 e:\project\dots and boxes\movesmanager.h
+	"structures.h"
+
+1640632456 e:\project\dots and boxes\structures.c
+
+1640358864 e:\project\dots and boxes\randomlinegen.h
+
+1640788560 e:\project\dots and boxes\savegame.h
+	"structures.h"
+
+1640791663 e:\project\dots and boxes\structures.h
+
+1640633449 e:\project\dots and boxes\gamecore.h
+	"structures.h"
+
+1640791190 e:\project\dots and boxes\gameloop.h
+	"structures.h"
+
