@@ -21,7 +21,7 @@
 
 int main(){
     //logo();
-
+    printf("DOTS AND BOXES\n");
     srand(time(0));
     int gridDim;
     int modeNum ;
@@ -71,8 +71,8 @@ int main(){
 
         //new game
         //gridDim = getIntegerUserInput("Enter dimension(nxn): ");
-        char diff[][MAXLENGTH] = {"Easy", "Hard"};
-        if(menu(hconsole, saved_attributes, 2, diff, "Choose Difficulty") == 1){
+        char diff[][MAXLENGTH] = {"Beginner", "Expert"};
+        if(menu(hconsole, saved_attributes, 2, diff, "Choose Grid size") == 1){
             //2x2 (3x3 dots)
             gridDim = 3;
         }else{
@@ -172,9 +172,9 @@ int main(){
             movesArray[i][1]=savedgame.moves[i][1];
             movesArray[i][2]=savedgame.moves[i][2];
         }
-        for(int i=0;i<(2*gridDim*(gridDim-1));i++){
+        /*for(int i=0;i<(2*gridDim*(gridDim-1));i++){
             printf("%d %d %d\n",movesArray[i][0],movesArray[i][1],movesArray[i][2]);
-        }
+        }*/
 
         //loading gameArray
         for(int i=0;i<arrayDim;i++){
