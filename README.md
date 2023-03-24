@@ -13,27 +13,27 @@ dots and boxes was a project for prgramming1 course in my first term in the comp
 ## Screenshots
 1. main menu
 
-![main menu](/assests/images/screenshot9)
+![main menu](/assests/images/screenshot9.png)
 
 2. choosing game mode
 
-![bigenner mode](/assests/images/screenshot8)
+![bigenner mode](/assests/images/screenshot8.png)
 
-![bigenner size check](/assests/images/screenshot7)
+![bigenner size check](/assests/images/screenshot7.png)
 
-![expert mode](/assests/images/screenshot6)
+![expert mode](/assests/images/screenshot6.png)
 
-![expert size check](/assests/images/screenshot5)
+![expert size check](/assests/images/screenshot5.png)
 
 3. in game screenshots
 
-![in game menu](/assests/images/screenshot3)
+![in game menu](/assests/images/screenshot3.png)
 
-![single player in game screenshot](/assests/images/screenshot4)
+![single player in game screenshot](/assests/images/screenshot4.png)
 
-![save menu](/assests/images/screenshot2)
+![save menu](/assests/images/screenshot2.png)
 
-![save slot loaded](/assests/images/screenshot1)
+![save slot loaded](/assests/images/screenshot1.png)
 
 ## Project assumptions
 
