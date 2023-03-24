@@ -12,27 +12,34 @@ dots and boxes was a project for prgramming1 course in my first term in the comp
 
 ## Screenshots
 1. main menu
-[!main menu](/assests/screenshots/screenshot9)
+
+![main menu](/assests/screenshots/screenshot9)
+
 2. choosing game mode
-[!bigenner mode](/assests/screenshots/screenshot8)
 
-[!bigenner size check](/assests/screenshots/screenshot7)
+![bigenner mode](/assests/screenshots/screenshot8)
 
-[!expert mode](/assests/screenshots/screenshot6)
+![bigenner size check](/assests/screenshots/screenshot7)
 
-[!expert size check](/assests/screenshots/screenshot5)
+![expert mode](/assests/screenshots/screenshot6)
+
+![expert size check](/assests/screenshots/screenshot5)
+
 3. in game screenshots
-[!in game menu](/assests/screenshots/screenshot3)
 
-[!single player in game screenshot](/assests/screenshots/screenshot4)
+![in game menu](/assests/screenshots/screenshot3)
 
-[!save menu](/assests/screenshots/screenshot2)
+![single player in game screenshot](/assests/screenshots/screenshot4)
 
-[!save slot loaded](/assests/screenshots/screenshot1)
+![save menu](/assests/screenshots/screenshot2)
+
+![save slot loaded](/assests/screenshots/screenshot1)
 
 ## Project assumptions
+
 project only runs on windows operating system as it uses `windows.h` and `conio.h` liberaries
 
 ## People worked on that project:
+
 - [Karim Fathy](https://github.com/karimfathy054)
 - [Mohammed Amr](https://github.com/M-Amr982)
